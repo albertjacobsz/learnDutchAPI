@@ -1,0 +1,10 @@
+const factory = require('./handlerFactory');
+const User = require('./../models/userModel');
+exports.getAllUsers = factory.getAll(User);
+exports.createNewUser = factory.createOne(User);
+exports.getOneUser = factory.getOne(User);
+exports.deleteUser = factory.deleteOne(User);
+exports.updateUser = factory.updateOne(User);
+exports.getMe = factory.getOne(User);
+exports.deleteMe = factory.deleteOne(User);
+exports.updateMe = factory.updateOne(User);
