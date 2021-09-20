@@ -12,5 +12,11 @@ const levelModel = new mongoose.Schema({
     },
   ],
 });
+levelModel.pre(/^find/, function (next) {
+  this.populate({
+    path: 'units',
+  });
+  next();
+});
 const Level = mongoose.model('Level', levelModel);
 module.exports = Level;
