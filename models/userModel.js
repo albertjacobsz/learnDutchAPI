@@ -10,6 +10,11 @@ const userModel = new mongoose.Schema({
     type: String,
     required: ['true', 'Users are required to have an email'],
     unique: true,
+    validate: {
+      validator: function (el) {
+        return el.toLowerCase();
+      },
+    },
   },
   password: {
     type: String,

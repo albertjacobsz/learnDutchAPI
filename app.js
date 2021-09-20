@@ -7,6 +7,7 @@ const levelRoutes = require('./routes/levelRoutes');
 const unitRoutes = require('./routes/unitRoutes');
 const wordRoutes = require('./routes/wordRoutes');
 const sentenceRoutes = require('./routes/sentenceRoutes');
+const globalErrorHandler = require('./controllers/errorController');
 const wordTypeRoutes = require('./routes/wordTypeRoutes');
 const sentenceStructureRoutes = require('./routes/sentenceStructureRoutes');
 const conjugationRoutes = require('./routes/conjugationRoutes');
@@ -33,4 +34,5 @@ app.use('/api/v1/conjugations', conjugationRoutes);
 app.all('*', (req, res, next) => {
   next(new AppError(`Can't find ${req.originalUrl} on this server!`, 404));
 });
+app.use(globalErrorHandler);
 module.exports = app;
