@@ -4,10 +4,12 @@ const wordModel = new mongoose.Schema({
     type: String,
     required: ['true', 'Word needs to have a dutch value'],
   },
-  english: {
-    type: String,
-    required: ['true', 'Word needs to have a dutch value'],
-  },
+  english: [
+    {
+      type: String,
+      required: ['true', 'Word needs to have a dutch value'],
+    },
+  ],
   type: [
     {
       type: mongoose.Schema.ObjectId,
