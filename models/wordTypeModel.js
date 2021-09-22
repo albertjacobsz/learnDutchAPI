@@ -10,6 +10,7 @@ const wordTypeModel = new mongoose.Schema({
       'adjective',
       'pronoun',
       'conjuction',
+      'preposition',
     ],
     required: ['true', 'Word needs to have a type'],
   },
